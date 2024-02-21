@@ -1,0 +1,25 @@
+{
+	"name": "Rails Devcontainer",
+    // 今回はdocker-composeを利用するため、dockerComposeFileでパスを指定する
+	"dockerComposeFile": [
+		"../../docker-compose.yml"
+	],
+    // docker-compose.ymlで指定する、開発コンテナのサービス名
+	"service": "backend",
+    // 自分が作業する場所を指定する
+	"workspaceFolder": "/workspaces/app",
+	// ルートユーザを使用
+	"remoteUser": "root",
+	// コンテナ内で使う拡張機能
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"shopify.ruby-lsp",
+				"castwide.solargraph",
+				"oderwat.indent-rainbow",
+				"mosapride.zenkaku",
+				"eamodio.gitlens"
+			]
+		}
+	}
+}
