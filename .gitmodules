@@ -1,0 +1,3 @@
+[submodule "todo-app/backend"]
+	path = todo-app/backend
+	url = https://github.com/TS-KN/app.git
