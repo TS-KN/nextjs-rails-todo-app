@@ -35,7 +35,7 @@ const Todos = () => {
       </label>
       <div className="items-center justify-center">
         {todos.map((todo) => (
-          <Link href={"todos/&{todo.id}"} key={todo.id}>
+          <Link href={`todos/${todo.id}`} key={todo.id}>
             <Todo todo={todo} />
           </Link>
         ))}
