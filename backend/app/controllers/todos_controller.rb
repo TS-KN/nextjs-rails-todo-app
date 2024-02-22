@@ -10,4 +10,20 @@ class TodosController < ApplicationController
 
     render json: @todo
   end
+
+  def create
+    @todo = Todo.new(todo_params)
+
+    if @todo.save
+      render json: @todo, status: :created, location: @todo
+    else
+      render json: @todo.errors, status: :unpocessable_entity
+    end
+  end
+
+  private
+
+  def todo_params
+    params.require(:todo).permit(:title, :content)
+  end
 end
