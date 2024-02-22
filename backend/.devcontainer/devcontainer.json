@@ -7,7 +7,7 @@
     // docker-compose.ymlで指定する、開発コンテナのサービス名
 	"service": "backend",
     // 自分が作業する場所を指定する
-	"workspaceFolder": "/workspaces/app",
+	"workspaceFolder": "/app",
 	// ルートユーザを使用
 	"remoteUser": "root",
 	// コンテナ内で使う拡張機能
