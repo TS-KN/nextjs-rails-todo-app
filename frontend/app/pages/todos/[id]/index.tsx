@@ -45,6 +45,12 @@ const TodoDetail = () => {
         <Todo todo={todo} />
         <div className="flex justify-end">
           <Link
+            href={`/todos/${id}/edit`}
+            className="mt-auto font-medium text-blue-600 hover:bg-blue-300 focus:outline-none mr-12"
+          >
+            Edit
+          </Link>
+          <Link
             href="/"
             className="mt-auto font-medium text-blue-600 hover:bg-blue-300 focus:outline-none"
           >

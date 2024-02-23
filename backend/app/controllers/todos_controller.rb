@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_action :set_todo, only: %i[update show]
+
   def index
     @todos = Todo.all.order(created_at: :desc).limit(10)
 
@@ -6,8 +8,6 @@ class TodosController < ApplicationController
   end
 
   def show
-    @todo = Todo.find(params[:id])
-
     render json: @todo
   end
 
@@ -21,7 +21,19 @@ class TodosController < ApplicationController
     end
   end
 
+  def update
+    if @todo.update(todo_params)
+      render json: @todo
+    else
+      render json: @todo.errors, status: :unprocessable_entity
+    end
+  end
+
   private
+
+  def set_todo
+    @todo = Todo.find(params[:id])
+  end
 
   def todo_params
     params.require(:todo).permit(:title, :content)
